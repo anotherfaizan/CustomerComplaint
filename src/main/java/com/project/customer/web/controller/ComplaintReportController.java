@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -23,6 +24,7 @@ public class ComplaintReportController {
         return new ModelAndView("ComplaintReport", "dateRangeBean", new DateRangeBean());
     }
 
+    @RequestMapping(value = "/getDetails.html", method = RequestMethod.POST)
     public ModelAndView getComplaintDetailsByDate(@ModelAttribute("dateRangeBean") DateRangeBean dateRangeBean){
         ModelAndView modelAndView = new ModelAndView();
         List<ComplaintBean> complaints = complaintService.getComplaintDetailsByDate(dateRangeBean.getFromDate(), dateRangeBean.getToDate());
