@@ -2,13 +2,13 @@ package com.project.customer.business.bean;
 
 public class ComplaintTypeBean {
     private Integer complaintTypeId;
-    private Integer complaintTypeName;
+    private String complaintTypeName;
 
-    public Integer getComplaintTypeName() {
+    public String getComplaintTypeName() {
         return complaintTypeName;
     }
 
-    public void setComplaintTypeName(Integer complaintTypeName) {
+    public void setComplaintTypeName(String complaintTypeName) {
         this.complaintTypeName = complaintTypeName;
     }
 
